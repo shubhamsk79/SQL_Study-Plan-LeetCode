@@ -20,9 +20,9 @@ insert into Rides (id, user_id, distance) values ('8', '19', '400');
 insert into Rides (id, user_id, distance) values ('9', '7', '230');
 
 # Write your MySQL query statement below
-SELECT u.name,IFNULL(SUM(r.distance),0) AS distance_travelled
+SELECT u.name,IFNULL(SUM(r.distance),0) AS travelled_distance
   FROM Users AS u
   LEFT JOIN Rides AS r
   ON u.id=r.user_id
   GROUP BY r.user_id
-  ORDER BY distance_travelled DESC,name ASC;
+  ORDER BY travelled_distance DESC,name ASC;
